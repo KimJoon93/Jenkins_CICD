@@ -1,16 +1,10 @@
-FROM ubuntu:14.04
-MAINTAINER Foo Bar <foo@bar.com>
+FROM node:10
+MAINTAINER Joon <jk1094@naver.com>
 
-RUN apt-get update
-RUN apt-get install -y nginx
-RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-RUN chown -R www-data:www-data /var/lib/nginx
+WORKDIR /usr/src/app
+COPY package*.json ./
 
-VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
-
-WORKDIR /etc/nginx
-
-CMD ["nginx"]
-
-EXPOSE 80
-EXPOSE 443
+RUN npm install
+COPY . .
+EXPOSE 8080
+CMD ["npm", "start"]
