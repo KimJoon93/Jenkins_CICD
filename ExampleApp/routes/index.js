@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Joon Joon Express Deploy' });
+  res.render('index', { title: 'Joon Joon Express Deploy2' });
 });
 
 module.exports = router;
