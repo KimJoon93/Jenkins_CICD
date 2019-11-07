@@ -11,4 +11,9 @@ router.get('/mysql', function(req, res, next) {
   res.render('index', { title: 'MYSQL DB' });
 });
 
+/* GET login. */
+router.get('/login', function(req, res, next) {
+  res.render('index', { title: 'login Page' });
+});
+
 module.exports = router;
